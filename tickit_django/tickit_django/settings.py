@@ -97,6 +97,7 @@ DATABASES = {
         'NAME': 'tickit',
         'USER': 'tickituser',
         'PASSWORD': 'tickit',
+        'PORT' : '5432'
     }
 }
 
