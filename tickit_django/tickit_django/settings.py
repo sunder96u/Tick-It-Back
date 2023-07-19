@@ -93,7 +93,7 @@ DATABASES = {
         'NAME': 'tickit',
         'USER': 'tickituser',
         'PASSWORD': 'tickit',
-        'HOST': 'localhost'
+        'HOST': 'tick-it-back-production.up.railway.app'
     }
 }
 
@@ -103,6 +103,7 @@ CORS_ALLOW_ALL_ORIGINS = True
 
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost:5173"
+    "tick-it-back-production.up.railway.app"
 ]
 
 
