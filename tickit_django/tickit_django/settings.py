@@ -100,11 +100,21 @@ DATABASES = {
 
 
 
+CORS_ALLOWED_ORIGINS = [
+    "https://example.com",
+    "https://sub.example.com",
+    "http://localhost:5173",
+    "http://127.0.0.1:5555",
+#    "https://tick-it-back-production.up.railway.app"
+]
+
+
+
 CORS_ALLOW_ALL_ORIGINS = True
 
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost:5173"
-    "tick-it-back-production.up.railway.app"
+    "https://tick-it-back-production.up.railway.app"
 ]
 
 
