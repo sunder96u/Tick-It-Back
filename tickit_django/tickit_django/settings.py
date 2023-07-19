@@ -25,7 +25,10 @@ SECRET_KEY = 'django-insecure-l3%3x1%e#vegu0)o#ws7o9s*w51$aa+2*oe0f3cghy30qy#z(4
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
+
+
+#Deployed url react url (localhosts) url of the api
 
 
 # Application definition
@@ -43,10 +46,10 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    "corsheaders.middleware.CorsMiddleware",
-    "django.middleware.common.CommonMiddleware",
+
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    "corsheaders.middleware.CorsMiddleware",
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -96,14 +99,11 @@ DATABASES = {
 
 
 
+CORS_ALLOW_ALL_ORIGINS = True
 
-CORS_ALLOWED_ORIGINS = [
-    "https://example.com",
-    "https://sub.example.com",
-    "http://localhost:5173",
-    "http://127.0.0.1:5555",
+CSRF_TRUSTED_ORIGINS = [
+    "http://localhost:5173"
 ]
-
 
 
 # Password validation
@@ -153,6 +153,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
+
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
