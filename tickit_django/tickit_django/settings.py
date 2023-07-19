@@ -39,9 +39,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'tickit',
     'rest_framework',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",
+    "django.middleware.common.CommonMiddleware",
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -72,6 +75,12 @@ TEMPLATES = [
 WSGI_APPLICATION = 'tickit_django.wsgi.application'
 
 
+
+
+
+
+
+
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
@@ -84,6 +93,17 @@ DATABASES = {
         'HOST': 'localhost'
     }
 }
+
+
+
+
+CORS_ALLOWED_ORIGINS = [
+    "https://example.com",
+    "https://sub.example.com",
+    "http://localhost:5173",
+    "http://127.0.0.1:5555",
+]
+
 
 
 # Password validation

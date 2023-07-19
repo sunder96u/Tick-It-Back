@@ -1,31 +1,6 @@
 from rest_framework import serializers
 from .models import Venue, Show, Band
 
-class VenueSerializer(serializers.HyperlinkedModelSerializer):
-    shows = serializers.HyperlinkedRelatedField(
-        view_name = 'show_detail',
-        many=True,
-        read_only=True
-    )
-
-    class Meta:
-        model = Venue
-        fields = ('id', 'venue_id','name','address','capacity','type','contact','venue_photo')
-
-
-
-
-class ShowSerializer(serializers.HyperlinkedModelSerializer):
-    bands = serializers.HyperlinkedRelatedField(
-        view_name = 'band_detail',
-        many=True,
-        read_only=True
-    )
-
-    class Meta:
-        model = Show
-        fields = ('show_id','venue_id','title','time','starting_price','poster')
-
 
 
 class BandSerializer(serializers.HyperlinkedModelSerializer):
@@ -35,6 +10,45 @@ class BandSerializer(serializers.HyperlinkedModelSerializer):
         read_only=True
     )
 
+
+    venue_id = serializers.PrimaryKeyRelatedField(
+        queryset= Venue.objects.all(),
+        source='venue'
+    )
+
     class Meta:
         model = Band
-        fields =(all)
+        fields ='__all__'
+
+
+
+class VenueSerializer(serializers.HyperlinkedModelSerializer):
+    shows = BandSerializer(
+        many=True,
+        read_only=True
+    )
+
+    venue_url = serializers.ModelSerializer.serializer_url_field(
+        view_name='venue-detail'
+    )
+
+
+    class Meta:
+        model = Venue
+        fields = '__all__'
+
+
+
+
+class ShowSerializer(serializers.HyperlinkedModelSerializer):
+    bands = BandSerializer(
+        many=True,
+        read_only=True
+    )
+
+    class Meta:
+        model = Show
+        fields ='__all__'
+
+
+
