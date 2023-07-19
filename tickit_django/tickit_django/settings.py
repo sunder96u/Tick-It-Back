@@ -25,7 +25,10 @@ SECRET_KEY = 'django-insecure-l3%3x1%e#vegu0)o#ws7o9s*w51$aa+2*oe0f3cghy30qy#z(4
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
+
+
+#Deployed url react url (localhosts) url of the api
 
 
 # Application definition
@@ -153,6 +156,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
+
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
