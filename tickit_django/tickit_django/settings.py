@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -80,7 +81,9 @@ WSGI_APPLICATION = 'tickit_django.wsgi.application'
 
 
 
-
+DATABASES = {
+    'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
+}
 
 
 
@@ -94,26 +97,26 @@ DATABASES = {
         'NAME': 'tickit',
         'USER': 'tickituser',
         'PASSWORD': 'tickit',
-        'HOST': 'localhost',
     }
 }
 
 
 
-CORS_ALLOWED_ORIGINS = [
-    "https://example.com",
-    "https://sub.example.com",
-    "http://localhost:5173",
-    "http://127.0.0.1:5555",
-#    "https://tick-it-back-production.up.railway.app"
-]
+# CORS_ALLOWED_ORIGINS = [
+#     "https://example.com",
+#     "https://sub.example.com",
+#     "http://localhost:5173",
+#     "http://127.0.0.1:5555",
+#     "http://0.0.0.0:$PORT"
+# #    "https://tick-it-back-production.up.railway.app"
+# ]
 
 
 
 CORS_ALLOW_ALL_ORIGINS = True
 
 CSRF_TRUSTED_ORIGINS = [
-    "http://localhost:5173"
+    "http://localhost:5173",
     "https://tick-it-back-production.up.railway.app"
 ]
 
