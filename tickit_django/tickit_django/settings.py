@@ -93,7 +93,7 @@ DATABASES = {
         'NAME': 'tickit',
         'USER': 'tickituser',
         'PASSWORD': 'tickit',
-        'HOST': 'localhost',
+        'HOST': '0.0.0.0',
         'PORT':'5432',
     }
 }
