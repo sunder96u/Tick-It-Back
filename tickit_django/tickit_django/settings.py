@@ -94,8 +94,7 @@ DATABASES = {
         'NAME': 'tickit',
         'USER': 'tickituser',
         'PASSWORD': 'tickit',
-        'HOST': 'tick-it-back-production.up.railway.app',
-        'PORT':'5432',
+        'HOST': 'localhost',
     }
 }
 
