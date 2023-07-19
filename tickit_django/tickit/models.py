@@ -20,6 +20,7 @@ class Band(models.Model):
     genre = models.CharField(max_length=100, default="")
     logo = models.ImageField(default="No Logo Provided")
 
+
     def __str__(self):
         return self.name
 
