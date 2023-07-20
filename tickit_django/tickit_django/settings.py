@@ -97,7 +97,11 @@ DATABASES = {
         'NAME': 'tickit',
         'USER': 'tickituser',
         'PASSWORD': 'tickit',
-        'PORT' : '5432'
+        'HOST' :   'containers-us-west-75.railway.app',
+        'PORT' : '7922',
+        'PGUSER':'postgres',
+        'PGPASSWORD':'1rIdbANF9LLNdnQHBGoM',
+        
     }
 }
 
