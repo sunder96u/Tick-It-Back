@@ -7,7 +7,7 @@ class Venue(models.Model):
     capacity = models.IntegerField(default=0)
     type = models.CharField(max_length=100)
     contact = models.CharField(max_length=100)
-    venue_photo = models.ImageField(default="No photo available")
+    venue_photo = models.CharField(default="No photo available")
 
     def __str__(self):
         return self.name
@@ -18,7 +18,7 @@ class Band(models.Model):
     band_id = models.CharField(max_length=100, default="")
     name = models.CharField(max_length=100, default="")
     genre = models.CharField(max_length=100, default="")
-    logo = models.ImageField(default="No Logo Provided")
+    logo = models.CharField(default="No Logo Provided")
 
 
     def __str__(self):
@@ -32,7 +32,7 @@ class Show(models.Model):
     title = models.CharField(max_length=100, default="No Title Available")
     time = models.CharField(max_length=100, default="12:00pm")
     starting_price = models.CharField(max_length=100, default="1")
-    poster = models.ImageField(default="No Poster Provided")
+    poster = models.CharField(default="No Poster Provided")
     band_id = models.ForeignKey(Band, on_delete=models.CASCADE, related_name='band', default="")
 
     def __str__(self):

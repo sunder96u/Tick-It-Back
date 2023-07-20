@@ -91,7 +91,17 @@ DATABASES = {
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'tickit',
+#         'USER': 'tickituser',
+#         'PASSWORD': 'tickit',
+#         'HOST' :   'localhost',
 
+        
+#     }
+# }
 
 
 
@@ -128,7 +138,6 @@ CORS_ALLOW_ALL_ORIGINS = True
 
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost:5173",
-    "http://localhost:5174",
     "https://tick-it-back-production.up.railway.app"
 ]
 
@@ -158,7 +167,7 @@ REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,
     # or allow read-only access for unauthenticated users.
     'DEFAULT_PERMISSION_CLASSES': [
-      #  'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+        # 'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
         'rest_framework.permissions.AllowAny'
     ]
 }
