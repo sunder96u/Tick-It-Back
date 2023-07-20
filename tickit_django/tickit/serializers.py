@@ -11,10 +11,10 @@ class BandSerializer(serializers.HyperlinkedModelSerializer):
     )
 
 
-    venue_id = serializers.PrimaryKeyRelatedField(
-        queryset= Venue.objects.all(),
-        source='venue'
-    )
+    # venue_id = serializers.PrimaryKeyRelatedField(
+    #     queryset= Venue.objects.all(),
+    #     source='venue'
+    # )
 
     class Meta:
         model = Band
