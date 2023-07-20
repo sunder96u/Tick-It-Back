@@ -5,7 +5,7 @@ from .models import Venue, Show, Band
 
 class BandSerializer(serializers.HyperlinkedModelSerializer):
     shows = serializers.HyperlinkedRelatedField(
-        view_name = 'show_detail',
+        view_name = 'show-detail',
         many=True,
         read_only=True
     )
