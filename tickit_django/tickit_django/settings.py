@@ -91,32 +91,32 @@ DATABASES = {
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'tickit',
-#         'USER': 'tickituser',
-#         'PASSWORD': 'tickit',
-#         'HOST' :   'containers-us-west-75.railway.app',
-#         'PORT' : '7922',
-
-        
-#     }
-# }
-
-
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'URL': 'postgresql://postgres:DKSqElWDXA3WO5HcuXJN@containers-us-west-102.railway.app:7196/railway',
-        'NAME': 'railway',
-        'USER': 'postgres',
-        'PASSWORD': 'DKSqElWDXA3WO5HcuXJN',
-        'HOST': 'containers-us-west-102.railway.app',
-        'PORT': '7196',
+        'NAME': 'tickit',
+        'USER': 'tickituser',
+        'PASSWORD': 'tickit',
+        'HOST': 'localhost'
     }
 }
+
+
+
+
+
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'URL': 'postgresql://postgres:DKSqElWDXA3WO5HcuXJN@containers-us-west-102.railway.app:7196/railway',
+#         'NAME': 'railway',
+#         'USER': 'postgres',
+#         'PASSWORD': 'DKSqElWDXA3WO5HcuXJN',
+#         'HOST': 'containers-us-west-102.railway.app',
+#         'PORT': '7196',
+#     }
+# }
 
 
 
@@ -170,7 +170,8 @@ REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,
     # or allow read-only access for unauthenticated users.
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+      #  'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+        'rest_framework.permissions.AllowAny'
     ]
 }
 
