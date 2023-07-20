@@ -91,32 +91,21 @@ DATABASES = {
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+
+
+
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'tickit',
-        'USER': 'tickituser',
-        'PASSWORD': 'tickit',
-        'HOST': 'localhost'
+        'URL': 'postgresql://postgres:DKSqElWDXA3WO5HcuXJN@containers-us-west-102.railway.app:7196/railway',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'DKSqElWDXA3WO5HcuXJN',
+        'HOST': 'containers-us-west-102.railway.app',
+        'PORT': '7196',
     }
 }
-
-
-
-
-
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'URL': 'postgresql://postgres:DKSqElWDXA3WO5HcuXJN@containers-us-west-102.railway.app:7196/railway',
-#         'NAME': 'railway',
-#         'USER': 'postgres',
-#         'PASSWORD': 'DKSqElWDXA3WO5HcuXJN',
-#         'HOST': 'containers-us-west-102.railway.app',
-#         'PORT': '7196',
-#     }
-# }
 
 
 
@@ -141,7 +130,6 @@ CSRF_TRUSTED_ORIGINS = [
     "http://localhost:5173",
     "http://localhost:5174",
     "https://tick-it-back-production.up.railway.app"
-    "https://tick-it-back-production.up.railway.app/"
 ]
 
 
