@@ -1,0 +1,14 @@
+{
+    "builds": [
+      {
+        "src": "tickit_django/wsgi.py",
+        "use": "@vercel/python"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "tickit_django/wsgi.py"
+      }
+    ]
+}

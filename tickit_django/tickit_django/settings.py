@@ -91,19 +91,36 @@ DATABASES = {
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'tickit',
+#         'USER': 'tickituser',
+#         'PASSWORD': 'tickit',
+#         'HOST' :   'containers-us-west-75.railway.app',
+#         'PORT' : '7922',
+
+        
+#     }
+# }
+
+
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'tickit',
-        'USER': 'tickituser',
-        'PASSWORD': 'tickit',
-        'HOST' :   'containers-us-west-75.railway.app',
-        'PORT' : '7922',
-        'PGUSER':'postgres',
-        'PGPASSWORD':'1rIdbANF9LLNdnQHBGoM',
-        
+        'URL': 'postgresql://postgres:DKSqElWDXA3WO5HcuXJN@containers-us-west-102.railway.app:7196/railway',
+        'NAME': 'PGDATABASE',
+        'USER': 'PGUSER',
+        'PASSWORD': 'PGPASSWORD',
+        'HOST': 'PGHOST',
+        'PORT': 'PGPORT',
     }
 }
+
+
+
+
 
 
 
